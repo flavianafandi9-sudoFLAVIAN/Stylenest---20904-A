@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.badge.BadgeDrawable;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView leadingImage = findViewById(R.id.leadingpageimage);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+
+        updateCartBadge(bottomNav);
 
         // Splash logic: Show leading image for 2 seconds, then load HomeFragment
         new Handler().postDelayed(() -> {
@@ -53,7 +55,29 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void loadFragment(Fragment fragment) {
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        if (bottomNav != null) {
+            updateCartBadge(bottomNav);
+        }
+    }
+
+    private void updateCartBadge(BottomNavigationView bottomNav) {
+        int count = CartManager.getInstance().getCartItems().size();
+        BadgeDrawable badge = bottomNav.getOrCreateBadge(R.id.navigation_cart);
+        if (count > 0) {
+            badge.setVisible(true);
+            badge.setNumber(count);
+            badge.setBackgroundColor(getResources().getColor(R.color.gold, getTheme()));
+            badge.setBadgeTextColor(getResources().getColor(R.color.black, getTheme()));
+        } else {
+            badge.setVisible(false);
+        }
+    }
+
+    public void loadFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, fragment)

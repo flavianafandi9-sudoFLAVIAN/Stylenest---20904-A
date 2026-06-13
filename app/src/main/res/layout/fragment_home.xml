@@ -20,18 +20,41 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="StyleNest"
-                android:textColor="@color/gold"
+                android:text="FLAYVEEUHN"
+                android:textColor="@color/black"
+                android:letterSpacing="0.1"
                 android:textSize="28sp"
+                android:fontFamily="sans-serif-condensed-light"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Premium Nairobi Urban Wear"
-                android:textColor="@color/black"
-                android:textSize="14sp" />
+                android:text="Premium Urban Wears"
+                android:textColor="@color/gold"
+                android:letterSpacing="0.2"
+                android:textAllCaps="true"
+                android:textSize="12sp" />
         </LinearLayout>
+
+        <!-- Search Bar on Home -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/home_search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="24dp"
+            app:startIconDrawable="@android:drawable/ic_menu_search"
+            app:startIconTint="@color/black"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_home_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="SEARCH FLAYVEEUHN..."
+                android:textSize="14sp"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Promotional Banner -->
         <androidx.cardview.widget.CardView

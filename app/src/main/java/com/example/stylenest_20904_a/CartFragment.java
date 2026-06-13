@@ -1,5 +1,6 @@
 package com.example.stylenest_20904_a;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,8 +28,8 @@ public class CartFragment extends Fragment {
             if (CartManager.getInstance().getCartItems().isEmpty()) {
                 Toast.makeText(getContext(), "Your cart is empty!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(getContext(), "Proceeding to Checkout...", Toast.LENGTH_SHORT).show();
-                // Logic for checkout can be added here
+                Intent intent = new Intent(getContext(), CheckoutActivity.class);
+                startActivity(intent);
             }
         });
 

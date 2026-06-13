@@ -4,8 +4,8 @@
     android:layout_width="160dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="8dp"
-    app:cardElevation="2dp">
+    app:cardCornerRadius="0dp"
+    app:cardElevation="0dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,18 +15,18 @@
         <ImageView
             android:id="@+id/product_image"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="180dp"
+            android:background="@color/gray_light"
+            android:padding="24dp"
             android:scaleType="centerInside"
-            android:padding="32dp"
-            app:tint="@color/gold"
-            android:background="@color/black"
-            android:src="@drawable/ic_tshirt" />
+            android:src="@drawable/ic_tshirt"
+            app:tint="@color/black" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:paddingVertical="12dp">
 
             <TextView
                 android:id="@+id/product_name"
@@ -35,26 +35,32 @@
                 android:ellipsize="end"
                 android:maxLines="1"
                 android:text="Urban Hoodie"
+                android:textAllCaps="true"
                 android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:letterSpacing="0.05"
+                android:textSize="12sp"
+                android:fontFamily="sans-serif-medium" />
 
             <TextView
                 android:id="@+id/product_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Ksh 2,500"
-                android:textColor="@color/gold" />
+                android:layout_marginTop="2dp"
+                android:textColor="@color/gold"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
-            <Button
+            <TextView
                 android:id="@+id/btn_add_to_cart"
-                android:layout_width="match_parent"
-                android:layout_height="36dp"
-                android:layout_marginTop="4dp"
-                android:backgroundTint="@color/black"
-                android:padding="0dp"
-                android:text="Add to Cart"
-                android:textColor="@color/white"
-                android:textSize="10sp" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="+ ADD TO CART"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:letterSpacing="0.1"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

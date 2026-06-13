@@ -1,5 +1,6 @@
 package com.example.stylenest_20904_a;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,6 +43,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             CartManager.getInstance().addProduct(product);
             Toast.makeText(v.getContext(), product.getName() + " added to cart", Toast.LENGTH_SHORT).show();
         });
+
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(v.getContext(), ProductDetailActivity.class);
+            intent.putExtra("product_name", product.getName());
+            intent.putExtra("product_price", product.getPrice());
+            intent.putExtra("product_image", product.getImageResource());
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override
@@ -50,9 +59,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     static class ProductViewHolder extends RecyclerView.ViewHolder {
-        TextView name, price;
+        TextView name, price, btnAddToCart;
         ImageView image;
-        Button btnAddToCart;
 
         public ProductViewHolder(@NonNull View itemView) {
             super(itemView);
