@@ -20,18 +20,18 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        ImageView leadingImage = findViewById(R.id.leadingpageimage);
+        View splashScreen = findViewById(R.id.splash_screen);
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
 
         updateCartBadge(bottomNav);
 
-        // Splash logic: Show leading image for 2 seconds, then load HomeFragment
+        // Splash logic: Show splash screen for 2.5 seconds, then load HomeFragment
         new Handler().postDelayed(() -> {
-            leadingImage.animate().alpha(0f).setDuration(500).withEndAction(() -> {
-                leadingImage.setVisibility(View.GONE);
+            splashScreen.animate().alpha(0f).setDuration(500).withEndAction(() -> {
+                splashScreen.setVisibility(View.GONE);
                 loadFragment(new HomeFragment());
             });
-        }, 2000);
+        }, 2500);
 
         bottomNav.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
