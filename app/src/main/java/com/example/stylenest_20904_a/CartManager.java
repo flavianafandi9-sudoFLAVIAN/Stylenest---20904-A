@@ -35,7 +35,8 @@ public class CartManager {
         for (Product product : cartItems) {
             try {
                 String priceStr = product.getPrice().replace("Ksh ", "").replace(",", "");
-                total += Double.parseDouble(priceStr);
+                double unitPrice = Double.parseDouble(priceStr);
+                total += unitPrice * product.getQuantity();
             } catch (Exception e) {
                 // Ignore if price format is wrong
             }

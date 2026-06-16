@@ -61,15 +61,15 @@ public class HomeFragment extends Fragment {
 
     private void setupRecyclerView(RecyclerView recyclerView) {
         List<Product> products = new ArrayList<>();
-        // 8 sample products categorized correctly
-        products.add(new Product("Silk Maxi Dress", "Ksh 4,500", R.drawable.ic_tshirt, "Dresses"));
-        products.add(new Product("Urban Sneakers", "Ksh 3,800", R.drawable.ic_trousers, "Shoes"));
-        products.add(new Product("Slim Fit Cargo", "Ksh 2,800", R.drawable.ic_trousers, "Trousers"));
-        products.add(new Product("Gold Pendant", "Ksh 1,500", R.drawable.ic_tshirt, "Accessories"));
-        products.add(new Product("Evening Gown", "Ksh 7,000", R.drawable.ic_tshirt, "Dresses"));
-        products.add(new Product("Leather Loafers", "Ksh 5,200", R.drawable.ic_trousers, "Shoes"));
-        products.add(new Product("Classic Chinos", "Ksh 3,200", R.drawable.ic_trousers, "Trousers"));
-        products.add(new Product("Urban Snapback", "Ksh 1,200", R.drawable.ic_hoodie, "Accessories"));
+        // Updated with your new products
+        products.add(new Product("Butterfly Watch Set", "Ksh 3,500", R.drawable.watch_set, "Accessories"));
+        products.add(new Product("Evening Silk Gown", "Ksh 8,500", R.drawable.maroon_dress, "Dresses"));
+        products.add(new Product("African Print Top", "Ksh 4,200", R.drawable.african_top, "Trousers"));
+        products.add(new Product("Adidas Samba", "Ksh 6,800", R.drawable.samba_sneakers, "Shoes"));
+        products.add(new Product("Summer Palm Set", "Ksh 3,200", R.drawable.palm_shirt, "Trousers"));
+        products.add(new Product("Premium Handbag", "Ksh 5,500", R.drawable.black_handbag, "Accessories"));
+        products.add(new Product("Toddler Ruffle Set", "Ksh 2,800", R.drawable.kids_set, "Dresses"));
+        products.add(new Product("Blue Flame Hoodie", "Ksh 4,500", R.drawable.flame_hoodie, "Trousers"));
 
         ProductAdapter adapter = new ProductAdapter(products);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));

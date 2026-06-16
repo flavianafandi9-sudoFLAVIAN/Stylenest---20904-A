@@ -4,15 +4,11 @@ plugins {
 
 android {
     namespace = "com.example.stylenest_20904_a"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.stylenest_20904_a"
-        minSdk = 36
+        minSdk = 23
         targetSdk = 36
         versionCode = 1
         versionName = "1.0"

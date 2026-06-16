@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,7 +35,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         if (product.getImageResource() != 0) {
             holder.image.setImageResource(product.getImageResource());
         } else {
-            holder.image.setImageResource(R.drawable.leadingimgepage); 
+            holder.image.setImageResource(R.drawable.leadingimagepage);
         }
 
         holder.btnAddToCart.setOnClickListener(v -> {
@@ -49,6 +48,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             intent.putExtra("product_name", product.getName());
             intent.putExtra("product_price", product.getPrice());
             intent.putExtra("product_image", product.getImageResource());
+            intent.putExtra("product_category", product.getCategory());
             v.getContext().startActivity(intent);
         });
     }

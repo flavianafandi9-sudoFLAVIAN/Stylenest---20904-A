@@ -13,10 +13,9 @@
         <ImageView
             android:id="@+id/detail_image"
             android:layout_width="match_parent"
-            android:layout_height="350dp"
+            android:layout_height="400dp"
             android:background="@color/gray_light"
-            android:padding="48dp"
-            android:scaleType="centerInside" />
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/detail_name"
@@ -57,6 +56,129 @@
             android:text="Premium quality fabric, comfortable fit, and stylish design. Perfect for any occasion."
             android:textColor="#333333"
             android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="SELECT SIZE"
+            android:letterSpacing="0.2"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <RadioGroup
+            android:id="@+id/rg_sizes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_s"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/size_selector_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="S"
+                android:textColor="@drawable/size_text_color"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rb_m"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/size_selector_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="M"
+                android:checked="true"
+                android:textColor="@drawable/size_text_color"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rb_l"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/size_selector_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="L"
+                android:textColor="@drawable/size_text_color"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/rb_xl"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/size_selector_bg"
+                android:button="@null"
+                android:gravity="center"
+                android:text="XL"
+                android:textColor="@drawable/size_text_color"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="QUANTITY"
+            android:letterSpacing="0.2"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:background="@color/gray_light">
+
+            <TextView
+                android:id="@+id/tv_minus"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="-"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/tv_quantity"
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tv_plus"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="+"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"

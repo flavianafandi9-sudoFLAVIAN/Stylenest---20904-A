@@ -28,6 +28,30 @@
         android:background="@color/gray_light"
         android:layout_marginBottom="16dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TOTAL"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_cart_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ksh 0"
+            android:textColor="@color/gold"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+    </LinearLayout>
+
     <Button
         android:id="@+id/btn_checkout"
         android:layout_width="match_parent"

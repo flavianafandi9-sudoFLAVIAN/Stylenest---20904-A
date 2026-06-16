@@ -1,92 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:background="@color/white">
 
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_gravity="center"
-        android:background="@color/gray_light"
-        android:padding="32dp"
-        android:src="@drawable/ic_hoodie" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:text="FLAVIAN STYLIST"
-        android:letterSpacing="0.1"
-        android:textColor="@color/black"
-        android:textSize="22sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="flavian@stylenest.com"
-        android:letterSpacing="0.05"
-        android:textSize="14sp"
-        android:textColor="@color/gold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="ORDER HISTORY"
-        android:letterSpacing="0.2"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/gray_light" />
-
+    <!-- Logged In View -->
     <LinearLayout
+        android:id="@+id/layout_logged_in"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="16dp">
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:background="@color/gray_light"
+            android:padding="32dp"
+            android:src="@drawable/leadingimagepage" />
 
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:text="ORDER #1023 — KSH 5,000"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:letterSpacing="0.1"
+            android:text="FLAVIAN STYLIST"
             android:textColor="@color/black"
-            android:textSize="12sp"
-            android:background="?android:attr/selectableItemBackground" />
+            android:textSize="22sp"
+            android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/profile_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:letterSpacing="0.05"
+            android:text="flavian@stylenest.com"
+            android:textColor="@color/gold"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:letterSpacing="0.2"
+            android:text="ORDER HISTORY"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/gray_light" />
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:text="ORDER #1019 — KSH 3,200"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:background="?android:attr/selectableItemBackground" />
+            android:layout_marginTop="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="12dp"
+                android:text="ORDER #1023 — KSH 5,000"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:padding="12dp"
+                android:text="ORDER #1019 — KSH 3,200"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:backgroundTint="@color/black"
+            android:letterSpacing="0.1"
+            android:text="LOGOUT"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-    <Button
+    <!-- Logged Out View -->
+    <LinearLayout
+        android:id="@+id/layout_logged_out"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:text="LOGOUT"
-        android:letterSpacing="0.1"
-        android:backgroundTint="@color/black"
-        android:textColor="@color/white" />
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="visible">
 
-</LinearLayout>
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/leadingimagepage"
+            android:alpha="0.3" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:letterSpacing="0.1"
+            android:text="SIGN IN TO VIEW YOUR PROFILE"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_go_to_login"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="@color/black"
+            android:letterSpacing="0.1"
+            android:text="SIGN IN"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+</FrameLayout>

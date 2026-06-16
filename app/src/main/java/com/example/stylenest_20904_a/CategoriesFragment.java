@@ -85,14 +85,15 @@ public class CategoriesFragment extends Fragment {
 
     private void setupData() {
         allProducts = new ArrayList<>();
-        allProducts.add(new Product("Silk Maxi Dress", "Ksh 4,500", R.drawable.ic_tshirt, "Dresses"));
-        allProducts.add(new Product("Urban Sneakers", "Ksh 3,800", R.drawable.ic_trousers, "Shoes"));
-        allProducts.add(new Product("Slim Fit Cargo", "Ksh 2,800", R.drawable.ic_trousers, "Trousers"));
-        allProducts.add(new Product("Gold Pendant", "Ksh 1,500", R.drawable.ic_tshirt, "Accessories"));
-        allProducts.add(new Product("Evening Gown", "Ksh 7,000", R.drawable.ic_tshirt, "Dresses"));
-        allProducts.add(new Product("Leather Loafers", "Ksh 5,200", R.drawable.ic_trousers, "Shoes"));
-        allProducts.add(new Product("Classic Chinos", "Ksh 3,200", R.drawable.ic_trousers, "Trousers"));
-        allProducts.add(new Product("Urban Snapback", "Ksh 1,200", R.drawable.ic_hoodie, "Accessories"));
+        allProducts.add(new Product("Butterfly Watch Set", "Ksh 3,500", R.drawable.watch_set, "Accessories"));
+        allProducts.add(new Product("Evening Silk Gown", "Ksh 8,500", R.drawable.maroon_dress, "Dresses"));
+        allProducts.add(new Product("African Print Top", "Ksh 4,200", R.drawable.african_top, "Trousers"));
+        allProducts.add(new Product("Adidas Samba", "Ksh 6,800", R.drawable.samba_sneakers, "Shoes"));
+        allProducts.add(new Product("Summer Palm Set", "Ksh 3,200", R.drawable.palm_shirt, "Trousers"));
+        allProducts.add(new Product("Premium Handbag", "Ksh 5,500", R.drawable.black_handbag, "Accessories"));
+        allProducts.add(new Product("Toddler Ruffle Set", "Ksh 2,800", R.drawable.kids_set, "Dresses"));
+        allProducts.add(new Product("Blue Flame Hoodie", "Ksh 4,500", R.drawable.flame_hoodie, "Trousers"));
+        allProducts.add(new Product("Lavender Ruffle Suit", "Ksh 5,800", R.drawable.lavender_set, "Trousers"));
         
         filteredProducts = new ArrayList<>(allProducts);
     }

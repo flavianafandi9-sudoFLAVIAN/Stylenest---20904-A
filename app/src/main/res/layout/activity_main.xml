@@ -18,7 +18,7 @@
         android:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/leadingimgepage" />
+        app:srcCompat="@drawable/leadingimagepage" />
 
     <!-- Main Content Container -->
     <FrameLayout

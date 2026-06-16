@@ -75,7 +75,7 @@
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
                     android:alpha="0.7"
-                    android:src="@drawable/leadingimgepage" />
+                    android:src="@drawable/leadingimagepage" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"

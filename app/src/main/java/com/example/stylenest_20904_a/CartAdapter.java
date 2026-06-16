@@ -30,6 +30,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         holder.name.setText(product.getName());
         holder.price.setText(product.getPrice());
         holder.image.setImageResource(product.getImageResource());
+        
+        String details = "Size: " + product.getSelectedSize() + " | Qty: " + product.getQuantity();
+        holder.details.setText(details);
     }
 
     @Override
@@ -38,13 +41,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     }
 
     static class CartViewHolder extends RecyclerView.ViewHolder {
-        TextView name, price;
+        TextView name, price, details;
         ImageView image;
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.cart_item_name);
             price = itemView.findViewById(R.id.cart_item_price);
+            details = itemView.findViewById(R.id.cart_item_details);
             image = itemView.findViewById(R.id.cart_item_image);
         }
     }
