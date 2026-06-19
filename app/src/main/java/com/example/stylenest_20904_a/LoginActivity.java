@@ -36,8 +36,8 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         tvRegister.setOnClickListener(v -> {
-            // For now, just show a message or navigate to a register activity if you had one
-            Toast.makeText(this, "Register feature coming soon!", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, RegisterActivity.class));
+            finish();
         });
     }
 }

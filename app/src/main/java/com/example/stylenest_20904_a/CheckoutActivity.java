@@ -6,6 +6,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 public class CheckoutActivity extends AppCompatActivity {
 
@@ -21,7 +25,8 @@ public class CheckoutActivity extends AppCompatActivity {
         Button btnPlaceOrder = findViewById(R.id.btn_place_order);
 
         double total = CartManager.getInstance().calculateTotal();
-        tvTotal.setText("Total: Ksh " + String.format("%.2f", total));
+        String totalStr = String.format(Locale.getDefault(), "Ksh %.2f", total);
+        tvTotal.setText("Total: " + totalStr);
 
         btnPlaceOrder.setOnClickListener(v -> {
             String name = etName.getText().toString().trim();
@@ -31,7 +36,14 @@ public class CheckoutActivity extends AppCompatActivity {
             if (name.isEmpty() || phone.isEmpty() || address.isEmpty()) {
                 Toast.makeText(this, "Please fill all fields", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(this, "Order placed successfully!", Toast.LENGTH_LONG).show();
+                // Save Order to History
+                String date = new SimpleDateFormat("dd MMM yyyy, HH:mm", Locale.getDefault()).format(new Date());
+                String orderId = "#SN" + (int)(Math.random() * 9000 + 1000);
+                
+                Order newOrder = new Order(orderId, date, totalStr, new ArrayList<>(CartManager.getInstance().getCartItems()));
+                UserManager.getInstance(this).addOrder(newOrder);
+
+                Toast.makeText(this, "Order " + orderId + " placed successfully!", Toast.LENGTH_LONG).show();
                 CartManager.getInstance().clearCart();
                 finish();
             }

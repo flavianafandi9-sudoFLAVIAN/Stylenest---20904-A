@@ -2,6 +2,8 @@ package com.example.stylenest_20904_a;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserManager {
     private static final String PREF_NAME = "StyleNestPrefs";
@@ -12,6 +14,7 @@ public class UserManager {
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
     private static UserManager instance;
+    private List<Order> userOrders = new ArrayList<>();
 
     private UserManager(Context context) {
         prefs = context.getApplicationContext().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
@@ -32,9 +35,15 @@ public class UserManager {
         editor.apply();
     }
 
+    public void register(String email, String name, String password) {
+        // In a real app, you'd save to a DB. For now, we just log them in.
+        login(email, name);
+    }
+
     public void logout() {
         editor.clear();
         editor.apply();
+        userOrders.clear();
     }
 
     public boolean isLoggedIn() {
@@ -47,5 +56,13 @@ public class UserManager {
 
     public String getUserName() {
         return prefs.getString(KEY_USER_NAME, "");
+    }
+
+    public void addOrder(Order order) {
+        userOrders.add(0, order); // Add new orders to the top
+    }
+
+    public List<Order> getUserOrders() {
+        return userOrders;
     }
 }

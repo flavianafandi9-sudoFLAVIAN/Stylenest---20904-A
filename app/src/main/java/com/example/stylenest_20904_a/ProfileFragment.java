@@ -11,12 +11,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class ProfileFragment extends Fragment {
 
     private LinearLayout layoutLoggedIn, layoutLoggedOut;
     private TextView tvName, tvEmail;
     private Button btnLogout, btnGoToLogin;
+    private RecyclerView rvOrders;
 
     @Nullable
     @Override
@@ -29,6 +32,9 @@ public class ProfileFragment extends Fragment {
         tvEmail = view.findViewById(R.id.profile_email);
         btnLogout = view.findViewById(R.id.btn_logout);
         btnGoToLogin = view.findViewById(R.id.btn_go_to_login);
+        rvOrders = view.findViewById(R.id.rv_order_history);
+
+        rvOrders.setLayoutManager(new LinearLayoutManager(getContext()));
 
         updateUI();
 
@@ -51,6 +57,9 @@ public class ProfileFragment extends Fragment {
             layoutLoggedOut.setVisibility(View.GONE);
             tvName.setText(userManager.getUserName());
             tvEmail.setText(userManager.getUserEmail());
+            
+            OrderAdapter adapter = new OrderAdapter(userManager.getUserOrders());
+            rvOrders.setAdapter(adapter);
         } else {
             layoutLoggedIn.setVisibility(View.GONE);
             layoutLoggedOut.setVisibility(View.VISIBLE);
